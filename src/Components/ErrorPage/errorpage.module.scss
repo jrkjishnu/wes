@@ -1,0 +1,175 @@
+@import "../../assets/style/main.module.scss";
+@import "../../assets/style/responsive.module.scss";
+@import "../../assets/style/varibales.module.scss";
+
+.error{
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(
+        32.57% 69.44% at 50% 53.15%,
+        #2e3640 9.43%,
+        #071221 100%
+      );
+      display: grid;
+      place-content: center;
+      overflow-x: hidden;
+}
+.error_wrap{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.img_plane{
+    display: grid;
+    place-content: center;
+    animation-duration: 4s;
+    animation-name: anim-plane;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function:linear;
+    animation-fill-mode:forwards;
+    transform: translateY(10px);
+    left:0%;	 
+}
+@keyframes anim-plane{ 
+    to{
+      transform:translateY(-16px);
+    }    
+  }
+.content{
+    text-align: center;
+    padding-top: 3rem;
+    h2{
+        color: $primary;
+        font-size: 3rem;
+        line-height: 4rem;
+        @include respond-to (mobile){
+          font-size: 2rem;
+        }
+    }
+    p{
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 200;
+        @include respond-to (mobile){
+          font-size: 0.8rem;
+        }
+    }
+    button{
+        border: none;
+        border-radius: 4px;
+        min-height: 40px;
+        padding: .5rem 1.4rem;
+        font-size: 14px;
+        font-weight: 600;
+        color: $font-color;
+        background-color:white;
+        transition: color .5s;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        margin-top: 1rem;
+        z-index: 999;
+        @include respond-to(mobile){
+          padding: 0.3rem 1rem;
+          font-size: 13px;
+          font-weight: 400;
+        }
+        &::before {
+            content: '';
+            display: block;
+            bottom: 0px;
+            width: 0%;
+            right: 0px;
+            background-color:$primary;
+            position: absolute;
+            transition: width ease 0.3s;
+            z-index: -1;
+            top: 0;
+            opacity: 1;
+            border-radius: 4px;
+          }
+          &:hover {
+            &:before {
+              left: 0px;
+              width: 100%;
+            }
+            &:hover {
+                z-index: 99999;
+              }
+        }
+    }
+   
+}
+.cloud_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+.cloud{ 
+
+-webkit-animation-name: cloud-movement;
+-webkit-animation-timing-function: linear;
+-webkit-animation-direction: forwards;
+-webkit-animation-iteration-count: infinite;
+-webkit-animation-duration: 8s;
+
+-moz-animation-name: cloud-movement;
+-moz-animation-timing-function: linear;
+-moz-animation-direction: forwards;
+-moz-animation-iteration-count: infinite;
+-moz-animation-duration: 8s;
+
+animation-name: cloud-movement;
+animation-timing-function: linear;
+animation-direction: forwards;
+animation-iteration-count: infinite;
+animation-duration: 8s;
+  opacity: 0.4;
+  z-index: 999;
+ position: absolute;
+
+  &:nth-child(1){
+    -webkit-animation-duration: 30s;
+    -moz-animation-duration: 30s;
+    animation-duration:30s;
+   top: 6rem;
+   right: -100px;
+  }
+  &:nth-child(2){
+    -webkit-animation-duration: 60.5s;
+    -moz-animation-duration: 60s;
+    animation-duration:60s;
+    top:5rem;
+}
+&:nth-child(3){
+    -webkit-animation-duration: 80.5s;
+    -moz-animation-duration: 80.5s;
+    animation-duration: 80.5s;
+    top:1rem;
+}
+}
+@keyframes cloud-movement {
+    0% {
+      opacity: 0.1;
+      -webkit-transform: translateX(300px);
+      -moz-transform: translateX(300px);
+      transform: translateX(300px);
+    }
+    10% {
+  
+      opacity: 0.7;
+    }
+    90% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateX(-1000px);
+      -moz-transform: translateX(-1000px);
+      transform: translateX(-1000px);
+    }
+  }
+}
+

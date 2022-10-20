@@ -1,0 +1,120 @@
+@import "../../assets/style/varibales.module.scss";
+@import "../../assets/style/main.module.scss";
+@import "../../assets/style/responsive.module.scss";
+
+.result {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .result_wrap {
+    height: 100%;
+    display: flex;
+    place-content: center;
+    flex-direction: column;
+    padding: 0 135px;
+    min-height: 650px;
+
+    @include respond-to(desktop) {
+      padding: 0px 100px;
+    }
+
+    @include respond-to(lap) {
+      padding: 0px 30px;
+    }
+
+    @include respond-to(tab) {
+      min-height: 500px;
+    }
+
+    @include respond-to(mobile) {
+      min-height: 450px;
+    }
+
+    @include respond-to(small) {
+      padding: 50px 15px;
+    }
+
+    .img_plane {
+      animation-duration: 5s;
+      animation-name: anim-plane;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      display: block;
+      margin: 0 auto;
+      transform: translateY(-30px);
+      left: 0;
+      display: flex;
+      justify-content: center;
+
+      @include respond-to(tab-small) {
+        max-width: 200px;
+      }
+
+      img {
+        width: auto;
+
+        @include respond-to(tab-small) {
+          width: 100%;
+        }
+      }
+    }
+
+    @keyframes anim-plane {
+      to {
+        transform: translateY(0px);
+      }
+    }
+
+    .content_box {
+      width: 100%;
+      text-align: center;
+      margin-top: 30px;
+
+      p {
+        font-size: 18px;
+        line-height: 28px;
+        color: white;
+        font-weight: 200;
+
+        @include respond-to(mobile) {
+          font-size: 14px;
+        }
+
+        b {
+          font-weight: 700;
+          color: $primary;
+
+          span {
+            color: white;
+            font-weight: 300;
+          }
+        }
+      }
+
+      h2 {
+        font-size: 42px;
+        line-height: 66px;
+        font-weight: 800;
+
+        @include respond-to(mobile) {
+          font-size: 32px;
+        }
+      }
+
+      .available {
+        color: #00c12a;
+      }
+
+      .not_available {
+        color: #ffd420;
+      }
+    }
+  }
+}

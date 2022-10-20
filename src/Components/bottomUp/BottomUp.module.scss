@@ -1,0 +1,53 @@
+@import "../../assets/style/varibales.module.scss";
+@import "../../assets/style/main.module.scss";
+@import "../../assets/style/responsive.module.scss";
+
+.btn_contain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 90px 0;
+
+  @include respond-to(lap) {
+    padding: 50px 0;
+  }
+
+  @include respond-to(mobile) {
+    padding: 20px 0;
+  }
+
+  .btn_top {
+    display: inline-block;
+    line-height: 75px;
+    background: $dark url(../../assets/images/top_arrow.png) no-repeat center;
+    text-align: center;
+    vertical-align: middle;
+    width: 74px;
+    height: 74px;
+    border-radius: 8px;
+    cursor: pointer;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+
+    &:hover {
+      -webkit-transform: translateY(-5px);
+      transform: translateY(-5px);
+    }
+
+    @include respond-to(lap) {
+      width: 54px;
+      height: 54px;
+      background-size: 13px;
+    }
+
+    @include respond-to(mobile) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+}

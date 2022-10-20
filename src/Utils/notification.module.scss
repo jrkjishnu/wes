@@ -1,0 +1,73 @@
+@import "../assets/style/responsive.module.scss";
+.btn_icon {
+    width:24px;
+    height:24px;
+    border-radius: 26px;
+    background: #b1b1b1;
+    border: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inherit;
+    @include respond-to(mobile){
+        width: 22px;
+        height: 22px;
+    }
+    &:hover {
+        background: rgb(158, 158, 158);
+    }
+    img{
+        width: 100%;
+    }
+}
+:global{
+    .ant-btn-sm{
+        padding: 4px;
+    }
+    .ant-notification-notice-message{
+        color: white;
+        font-weight: 600;
+        margin-bottom: 0px !important;
+        @include respond-to(mobile){
+            font-size: 13px !important;
+            margin-left: 30px !important;
+            width: 100%;
+        }
+        @include respond-to(small){
+            margin-left: 20px !important;
+        }
+    } 
+    .ant-notification-notice-description{
+        color: #eeeeee;
+        @include respond-to(mobile){
+            font-size: 12px !important;
+            margin-left: 30px !important;
+        }
+        @include respond-to(small){
+            margin-left: 20px !important;
+        }
+    }
+    .ant-notification-notice-with-icon{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .ant-notification-notice-icon{
+        z-index: 99;
+        left: 20px;
+        margin-left: 0;
+        font-size: 28px;
+        @include respond-to(mobile){
+            font-size: 24px;
+            left: 10px;
+        }
+    }
+    .ant-notification-notice{
+        background: #2e3641;
+  
+    }
+    .ant-notification-notice-close{
+        top:8px;
+        right:8px;
+    }
+}

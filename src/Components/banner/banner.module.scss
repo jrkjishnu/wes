@@ -1,0 +1,790 @@
+@import "../../assets/style/varibales.module.scss";
+@import "../../assets/style/main.module.scss";
+@import "../../assets/style/responsive.module.scss";
+
+.banner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+
+  .black_bg {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background: radial-gradient(
+      32.57% 69.44% at 50% 53.15%,
+      #2e3640 9.43%,
+      #071221 100%
+    );
+    box-shadow: 10px 10px 120px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 120px 115px 0px;
+    position: relative;
+
+    @include respond-to(desktop) {
+      padding: 80px 100px 100px;
+    }
+
+    @include respond-to(lap) {
+      padding: 50px 40px 50px;
+    }
+
+    @include respond-to(tab) {
+      padding: 50px 40px 30px;
+    }
+
+    @include respond-to(tab-small) {
+      padding: 50px 40px 50px;
+    }
+
+    @include respond-to(mobile) {
+      padding: 30px 15px 30px;
+    }
+
+    :global {
+      .ant-col-md-12 {
+        @include respond-to(tab) {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+    }
+
+    .heading {
+      h2 {
+        color: white;
+
+        span {
+          color: $primary;
+        }
+      }
+    }
+
+    .tab_sec {
+      display: flex;
+      padding-bottom: 170px;
+
+      @include respond-to(desktop) {
+        padding-bottom: 60px;
+      }
+
+      @include respond-to(tab) {
+        padding-bottom: 35px;
+      }
+
+      @include respond-to(tab-small) {
+        padding-bottom: 30px;
+      }
+
+      .last_cont {
+        padding-bottom: 0px !important;
+      }
+
+      :global {
+        .ant-tabs-nav-wrap {
+          @include respond-to(mobile) {
+            display: inline-block !important;
+          }
+        }
+
+        .ant-tabs-nav {
+          margin: 0;
+        }
+
+        .ant-tabs-nav-list {
+          background-color: white;
+          padding: 5px 5px;
+          border-radius: 4px;
+          display: flex;
+          gap: 4px;
+
+          .ant-select-focused {
+            box-shadow: inherit;
+          }
+
+          .ant-tabs-tab {
+            color: #777777;
+            min-width: 192px;
+            height: 42px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 15px;
+            line-height: 14px;
+            font-weight: 300;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s;
+            text-transform: uppercase;
+
+            @include respond-to(tab) {
+              min-width: 180px;
+            }
+
+            @include respond-to(mobile) {
+              width: -webkit-fill-available;
+              min-width: inherit;
+            }
+
+            @include respond-to(small) {
+              font-size: 13px;
+            }
+
+            &:hover {
+              color: $primary;
+            }
+          }
+
+          .ant-tabs-tab-active {
+            background-color: $dark;
+            border-radius: 4px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+            font-weight: 400;
+
+            .ant-tabs-tab-btn {
+              color: $primary !important;
+            }
+          }
+
+          .ant-tabs-ink-bar {
+            display: none;
+          }
+
+          .ant-tabs-tab + .ant-tabs-tab {
+            margin: 0px;
+          }
+        }
+
+        .ant-tabs-content-holder {
+          color: white;
+          padding-top: 40px;
+          padding-right: 5rem;
+
+          @include respond-to(desktop) {
+            padding-top: 20px;
+            padding-right: 0rem;
+          }
+
+          @include respond-to(mobile) {
+            padding-right: 0rem;
+            padding-top: 20px;
+          }
+
+          p {
+            font-size: 18px;
+            line-height: 28px;
+            font-weight: 100;
+            padding-bottom: 25px;
+
+            @include respond-to(desktop) {
+              font-size: 17px;
+            }
+
+            @include respond-to(pc) {
+              font-size: 15px;
+              line-height: 22px;
+              padding-bottom: 18px;
+            }
+
+            @include respond-to(lap) {
+              font-size: 17px;
+              line-height: 28px;
+            }
+
+            @include respond-to(tab) {
+              font-size: 14px;
+              line-height: 20px;
+            }
+
+            @include respond-to(small) {
+              font-size: 13px;
+              line-height: 20px;
+              padding-bottom: 10px;
+            }
+          }
+
+          .last_cont {
+            padding-bottom: 0px !important;
+          }
+
+          h3 {
+            color: $primary;
+            font-weight: 800;
+            line-height: 28px;
+            font-size: 18px;
+
+            @include respond-to(pc) {
+              font-size: 15px;
+            }
+
+            span {
+              color: white;
+            }
+          }
+        }
+
+        .ant-tabs-top > .ant-tabs-nav::before {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .banner_contain {
+    width: 100%;
+    position: relative;
+    height: 100%;
+
+    .main_banner {
+      position: absolute;
+      width: 100%;
+      bottom: 0px;
+      text-align: center;
+
+      @include respond-to(desktop) {
+        bottom: -95px;
+      }
+
+      @include respond-to(lap) {
+        bottom: -60px;
+      }
+
+      @include respond-to(tab) {
+        position: relative;
+        bottom: -10px;
+      }
+      @include respond-to(tab-small){
+        bottom: -60px;
+      }
+      @include respond-to(mobile){
+        bottom: -50px;
+      }
+
+      .imgwrap {
+        position: relative;
+        display: inline-block;
+        @include aniamte;
+        @include Right;
+        @include fadeRight;
+
+        .image_box {
+          position: relative;
+          width: 610px;
+          height: 555px;
+          display: flex;
+          justify-content: center;
+         @include respond-to(desktop){
+           width: 480px;
+           height: auto;
+         }
+         @include respond-to(lap){
+          width: 430px;
+          height: auto;
+        }
+        @include respond-to(mobile){
+          width: 340px;
+        }
+        @include respond-to(small){
+          width: 260px;
+        }
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .wings_container {
+          position: absolute;
+          width: 130px;
+          height: 156px;
+          left: 88px;
+          top: -14px;
+          @include respond-to(desktop){
+            width: 130px;
+            height: 130px;
+            left: 62px;
+          }
+          @include respond-to(lap){
+            left: 47px;
+            top: -18px;
+          }
+          @include respond-to(small){
+            width: 90px;
+            height: 90px;
+            left: 34px;
+            top: -23px;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 66px;
+            top: 60px;
+            width: 13px;
+            height: 13px;
+            background: url(../../assets/images/cap.svg) no-repeat center;
+            @include respond-to(desktop){
+              left: 57px;
+              top: 50px;
+            }
+            @include respond-to(mobile){
+              width: 9px;
+              height: 9px;
+              background-size: 7px;
+              left: 38px;
+              top: 43px;
+            }
+            @include respond-to(small){
+              left: 29px;
+              top: 41px;
+            }
+          }
+
+          .wing {
+            width: 150px;
+            height: 150px;
+            -webkit-animation: spinabt 4s linear infinite;
+            -moz-animation: spinabt 4s linear infinite;
+            animation: spinabt 4s linear infinite;
+            margin-top: -8px;
+            @include respond-to(desktop){
+              width: 130px;
+              height: 130px; 
+              margin-top: -10px;
+            }
+            @include respond-to(mobile){
+              width: 90px;
+              height: 90px;
+              margin-top: 3px;
+            }
+            @include respond-to(small){
+              width: 70px;
+              height: 70px;
+              margin-top: 10px;
+            }
+            img{
+              width: 100%;
+            }
+          }
+
+          @-moz-keyframes spinabt {
+            100% {
+              -moz-transform: rotate(360deg);
+            }
+          }
+
+          @-webkit-keyframes spinabt {
+            100% {
+              -webkit-transform: rotate(360deg);
+            }
+          }
+
+          @keyframes spinabt {
+            100% {
+              -webkit-transform: rotate(360deg);
+              transform: rotate(360deg);
+            }
+          }
+
+          @keyframes move-wheel {
+            to {
+              transform: rotate(360deg);
+            }
+          }
+        }
+      }
+
+      #wingcontain2 {
+        position: absolute;
+        width: 130px;
+        height: 156px;
+        left: 211px;
+        top: -53px;
+        @include respond-to(desktop){
+          left: 158px;
+          top: -46px;
+        }
+        @include respond-to(lap){
+          left:134px;
+        }
+        @include respond-to(mobile){
+          left:116px;
+          top:-40px;
+        }
+        @include respond-to(small){
+          left: 86px;
+        }
+        .wing {
+          -webkit-animation: spinabt 5s linear infinite;
+          -moz-animation: spinabt 5s linear infinite;
+          animation: spinabt 5s linear infinite;
+          margin-top: -8px;
+          @include respond-to(mobile){
+            margin-top: -1px;
+          }
+          @include respond-to(small){
+            margin-top: 9px;
+          }
+        }
+      }
+
+      #wingcontain3 {
+        position: absolute;
+        width: 130px;
+        height: 156px;
+        left: 334px;
+        top: -17px;
+        @include respond-to(desktop){
+          left: 255px;
+        }
+        @include respond-to(lap){
+          left: 221px;
+          top: -20px;
+        }
+        @include respond-to(mobile){
+          left:184px;
+        }
+        @include respond-to(small){
+          left:139px;
+          top: -24px;
+        }
+        .wing {
+          -webkit-animation: spinabt 6s linear infinite;
+          -moz-animation: spinabt 6s linear infinite;
+          animation: spinabt 6s linear infinite;
+          margin-top: -8px;
+          @include respond-to(mobile){
+            margin-top: 1px;
+          }
+          @include respond-to(small){
+            margin-top: 9px;
+          }
+        }
+      }
+
+      .scale-4 {
+        -webkit-transform: scale(0.4);
+        transform: scale(0.4);
+      }
+
+    }
+  }
+
+  .plane {
+    position: absolute;
+    right: -160px;
+    top: -183px;
+    min-width: 320px;
+    max-width: 380px;
+    display: block;
+    margin: 0 auto;
+    @include aniamte;
+    @include Bottom;
+    @include fadeBottom;
+    @include three;
+@include respond-to(desktop){
+  top: -140px;
+}
+    @include respond-to(pc) {
+      max-width: 300px;
+      top: -120px;
+      right: -127px;
+    }
+
+    @include respond-to(lap) {
+      min-width: 300px;
+      max-width: 320px;
+      top: -94px;
+      right: -63px;
+    }
+
+    @include respond-to(tab) {
+      max-width: 240px;
+      min-width: 235px;
+      top: -180px;
+    }
+
+    @include respond-to(mobile) {
+      max-width: 210px;
+      min-width: 200px;
+      top: -120px;
+      right: -30px;
+    }
+
+    @include respond-to(small) {
+      max-width: 130px;
+      min-width: 125px;
+      top: -70px;
+      right: -26px;
+    }
+
+    @keyframes anim-plane {
+      to {
+        transform: translateY(10px);
+
+        @include respond-to(desktop) {
+          transform: translateY(90px);
+        }
+
+        @include respond-to(tab) {
+          transform: translateY(30px);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      animation-duration: 9s;
+      animation-name: anim-plane;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      transform: translateY(80px);
+
+      @include respond-to(desktop) {
+        transform: translateY(60px);
+      }
+
+      @include respond-to(mobile) {
+        transform: translateY(40px);
+      }
+    }
+  }
+
+  .second_tab {
+    width: 100%;
+    padding-bottom: 6rem;
+    padding-left: 6rem;
+    overflow: hidden;
+
+    @include respond-to(desktop) {
+      padding-bottom: 0rem;
+      padding-left: 3rem;
+    }
+
+    @include respond-to(tab) {
+      padding-left: 0;
+      padding-bottom: 0px;
+    }
+.box_list{
+  @include respond-to(small){
+    margin-bottom: 60px;
+  }
+}
+    .tab_box {
+      display: flex;
+      flex-direction: row;
+      padding-bottom: 80px;
+
+      @include respond-to(lap) {
+        padding-bottom: 65px;
+      }
+
+      @include respond-to(small) {
+        padding-bottom: 0px;
+      }
+
+      #arrow {
+        position: relative;
+
+        &::after {
+          position: absolute;
+          bottom: -54px;
+          width: 18px;
+          height: 30px;
+          content: "";
+          background: url(../../assets/images/arrow_btm.svg) no-repeat;
+
+          @include respond-to(lap) {
+            background-size: 14px;
+            width: 14px;
+          }
+        }
+      }
+
+      .left_box {
+        background: $primary;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        box-shadow: 4px 4px 30px 0px rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        padding: 15px 15px 0;
+        position: relative;
+        min-width: 150px;
+        min-height: 150px;
+        max-width: 150px;
+        max-height: 150px;
+
+        @include respond-to(desktop) {
+          min-width: 130px;
+          min-height: 130px;
+          max-width: 130px;
+          max-height: 130px;
+        }
+
+        @include respond-to(lap) {
+          min-width: 110px;
+          min-height: 110px;
+          max-width: 110px;
+          max-height: 110px;
+          padding: 10px 10px 0;
+        }
+
+        @include respond-to(mobile) {
+          min-width: 100px;
+          min-height: 100px;
+          max-width: 100px;
+          max-height: 100px;
+          padding: 10px 10px 0;
+        }
+
+        span {
+          background: $dark;
+          color: white;
+          border-radius: 6px;
+          width: 38px;
+          height: 38px;
+          text-align: center;
+          font-size: 24px;
+          font-weight: 600;
+          display: grid;
+          place-content: center;
+
+          @include respond-to(desktop) {
+            font-size: 18px;
+          }
+
+          @include respond-to(mobile) {
+            width: 30px;
+            height: 30px;
+            font-size: 16px;
+          }
+        }
+
+        .img_box {
+          position: absolute;
+          bottom: -1rem;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          min-height: 105px;
+          @include respond-to(tab){
+            min-height: 75px;
+          }
+         
+          @include respond-to(mobile){
+            bottom: -.8rem; 
+          }
+
+          .icon_box{
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+          }
+
+          img {
+            width: 100%;
+
+            @include respond-to(desktop) {
+              width: 85%;
+            }
+
+            @include respond-to(lap) {
+              width: 70%;
+            }
+            @include respond-to(mobile) {
+              width: 63%;
+            }
+          }
+        }
+      }
+
+      .right_box {
+        display: flex;
+        flex-wrap: wrap;
+        color: white;
+        align-items: center;
+        width: 100%;
+
+        .cont_box {
+          padding-left: 32px;
+
+          @include respond-to(small) {
+            padding-left: 20px;
+          }
+
+          h3 {
+            font-size: 21px;
+            color: $primary;
+            line-height: 24px;
+            padding-bottom: 18px;
+
+            @include respond-to(pc) {
+              font-size: 20px;
+              line-height: 22px;
+              padding-bottom: 14px;
+            }
+
+            @include respond-to(small) {
+              font-size: 18px;
+              line-height: 20px;
+              padding-bottom: 10px;
+            }
+          }
+
+          p {
+            font-size: 16px;
+            line-height: 22px;
+            font-weight: 300;
+
+            @include respond-to(pc) {
+              font-size: 14px;
+              line-height: 20px;
+            }
+
+            @include respond-to(small) {
+              font-size: 13px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    :nth-child(3) {
+      padding-bottom: 20px;
+      @include respond-to(tab){
+        margin-bottom: 5rem
+      }
+      @include respond-to(tab-small){
+        margin-bottom: 1rem
+      }
+    }
+
+    #list_one {
+      @include aniamte;
+      @include Right;
+      @include fadeRight;
+      @include one;
+    }
+
+    #list_two {
+      @include aniamte;
+      @include Right;
+      @include fadeRight;
+      @include two;
+    }
+
+    #list_three {
+      @include aniamte;
+      @include Right;
+      @include fadeRight;
+      @include three;
+    }
+  }
+}

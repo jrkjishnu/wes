@@ -1,0 +1,147 @@
+@import "../../assets/style/varibales.module.scss";
+@import "../../assets/style/responsive.module.scss";
+
+header {
+  width: 100%;
+  padding: 20px 80px 0;
+  display: flex;
+  margin-bottom: 80px;
+
+  @include respond-to(desktop) {
+    padding: 20px 40px 0;
+  }
+  @include respond-to(lap){
+    margin-bottom: 60px;
+  }
+  @include respond-to(tab) {
+    padding: 20px 15px;
+    margin-bottom: 10px;
+  }
+
+  @include respond-to(mobile) {
+    padding: 15px 15px;
+  }
+
+  .top_bar {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    grid-template-columns: 1fr 2fr 1fr;
+ 
+    @include respond-to(tab) {
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      cursor: pointer;
+      min-width: 100px;
+      @include respond-to(tab) {
+        order: 1;
+      }
+
+      @include respond-to(mobile) {
+        max-width: 80px;
+        min-width: 75px;
+      }
+
+      img {
+        @include respond-to(mobile) {
+          width: 100%;
+        }
+      }
+    }
+
+    .center_box {
+      @include respond-to(tab) {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+      }
+
+      .progress {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .box_right {
+      @include respond-to(tab) {
+        order: 2;
+      }
+
+      .top_button {
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+
+        .btn_top {
+          border: none;
+          height: 100%;
+          width: 100%;
+          border: 2px solid $font-color;
+          border-radius: 6px;
+          min-height: 40px;
+          font-size: 14px;
+          font-weight: 600;
+          text-transform: uppercase;
+          color: $font-color;
+          background-color: transparent;
+          transition: color .5s;
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          @include respond-to(mobile) {
+            padding: 4px 10px;
+          }
+
+          @include respond-to(small) {
+            font-size: 11px;
+            min-height: 35px;
+          }
+
+          &::before {
+            content: '';
+            display: block;
+            bottom: 0px;
+            width: 0%;
+            height: 100%;
+            right: 0px;
+            background: $dark;
+            position: absolute;
+            transition: width ease 0.3s;
+            z-index: -1;
+            top: 0;
+            opacity: 1;
+            border-radius: 4px;
+            @include respond-to(mobile){
+              display: none;
+            }
+          }
+
+          &:hover {
+            &:before {
+              left: 0px;
+              width: 100%;
+            }
+
+            &:hover {
+              color: white;
+              z-index: 99999;
+              font-weight: 500;
+              @include respond-to(mobile){
+                color: $font-color;
+              }
+            }
+          }
+
+
+        }
+
+      }
+    }
+  }
+
+}

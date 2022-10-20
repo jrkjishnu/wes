@@ -1,0 +1,109 @@
+$primary:#FFD420;
+$font-color:#071221;
+$dark:#071221;
+$gray:#F6F6F6;
+
+/* Css Animation */
+
+@mixin one {
+    -webkit-animation-delay: .2s;
+    -moz-animation-delay: .2s;
+    animation-delay: .2s;
+}
+
+@mixin two {
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    animation-delay: .4s;
+}
+
+@mixin three {
+    -webkit-animation-delay: .6s;
+    -moz-animation-delay: .6s;
+    animation-delay: .6s;
+}
+
+@mixin aniamte {
+
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+/* Css Animation Right */
+
+@mixin fadeRight {
+    -webkit-animation-name: fadeRight;
+    animation-name: fadeRight;
+}
+
+@mixin Right {
+
+    @keyframes fadeRight {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(100px, 0%, 0);
+            transform: translate3d(100px, 0%, 0);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+
+    @-webkit-keyframes fadeRight {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(100px, 0%, 0);
+            transform: translate3d(100px, 0%, 0);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+}
+
+/* Css Animation Bottom */
+
+@mixin fadeBottom {
+    -webkit-animation-name: fadeBottom;
+    animation-name: fadeBottom;
+}
+
+@mixin Bottom {
+
+    @keyframes fadeBottom {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100px, 0);
+            transform: translate3d(0, -100px, 0);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+
+    @-webkit-keyframes fadeBottom {
+        from {
+            opacity: 0;
+            -webkit-transform: translate3d(0, -100px, 0);
+            transform: translate3d(0, -100px, 0);
+        }
+
+        to {
+            opacity: 1;
+            -webkit-transform: none;
+            transform: none;
+        }
+    }
+}
+
